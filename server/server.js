@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: "http://localhost:5173", // or wherever your frontend runs
+  origin: "https://vaultlock.onrender.com", 
   credentials: true
 }));
 app.use(express.json());
