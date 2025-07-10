@@ -41,7 +41,7 @@ const FileUpload = ({ onUpload }) => {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/files/upload", formData, {
+      await axios.post("https://vault-backend-edep.onrender.com/api/files/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
