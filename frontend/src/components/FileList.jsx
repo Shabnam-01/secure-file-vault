@@ -21,7 +21,7 @@ const FileList = ({ refreshKey }) => {
 
   const downloadFile = async (id, filename) => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/files/${id}`, {
+    const response = await axios.get(`https://vault-backend-edep.onrender.com/api/files/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
