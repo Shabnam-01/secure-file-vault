@@ -18,7 +18,7 @@ const TwoFASetup = () => {
 
   const enable2FA = async () => {
   const token = localStorage.getItem("token");
-  const res = await axios.post("http://localhost:5000/api/auth/enable2fa", {}, {
+  const res = await axios.post("https://vault-backend-edep.onrender.com/api/auth/enable2fa", {}, {
     headers: { Authorization: `Bearer ${token}` }
   });
 
