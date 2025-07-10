@@ -43,16 +43,16 @@ const Settings = () => {
     
     try {
       const token = localStorage.getItem("token");
-      await axios.put("http://localhost:5000/api/auth/update-profile", formData, {
+      await axios.put("https://vault-backend-edep.onrender.com/api/auth/update-profile", formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
       // Fetch updated info
-      const res = await axios.get("http://localhost:5000/api/files/settings", {
+      const res = await axios.get("https://vault-backend-edep.onrender.com/api/files/settings", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      setUser(res.data.user); // ✅ Updates the context and UI
+      setUser(res.data.user); 
       alert("Account updated successfully");
       setEditMode(false);
     } catch (err) {
@@ -65,7 +65,7 @@ const Settings = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/auth/settings/twofa",
+        "https://vault-backend-edep.onrender.com/api/auth/settings/twofa",
         { enabled: false },
         { headers: { Authorization: `Bearer ${token}` } }
       );
