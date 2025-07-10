@@ -7,13 +7,13 @@ import axios from "axios";
 
 const Dashboard = () => {
   const [stats, setStats] = useState(null);
-  const [sidebarOpen, setSidebarOpen] = useState(false); // ✅ added state
+  const [sidebarOpen, setSidebarOpen] = useState(false); 
   const location = useLocation();
 
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/files/stats", {
+      const res = await axios.get("https://vault-backend-edep.onrender.com/api/files/stats", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStats(res.data);
